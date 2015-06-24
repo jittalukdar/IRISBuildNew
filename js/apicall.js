@@ -16,6 +16,19 @@ $(window).load(function () {
             callApiForRegistration(todo, fname, lname, email, password);
         }
     });
+    $("#posts").bind("touchstart click", function () {
+        $(this).fadeOut("slow");
+        setTimeout(function () {
+            $("#postContent").slideDown("slow");
+        }, 1000);
+    });
+    $("#cancelPop").bind("touchstart click", function () {
+        $("#postContent").slideUp("slow");
+        setTimeout(function () {
+            $("#posts").fadeIn("slow");
+        }, 1000);
+
+    });
 });
 
 // REGISTRATION CODE
@@ -346,7 +359,7 @@ function groupFunction() {
     checkUserSession();
     $(window).bind('deviceready load', function () {
         fetchPublicGroups();
-        fetchPrivateGroups();
+        fetchMyGroups();
         $("#btnCamera").bind("touchstart click", function () {
             getPictureFromCamera();
         });
@@ -404,7 +417,7 @@ function fetchPublicGroups() {
         }
     });
 }
-function fetchPrivateGroups() {
+function fetchMyGroups() {
     $.ajax({
         url: BASE_URL + 'api/fetchUsersPrivateGroups',
         type: 'POST',
@@ -457,7 +470,10 @@ function viewGroupDetails(group_id) {
 
 // GROUP POST FUNCTIONS
 function groupPostFunctions() {
-    fetchCustomGroupPost();
+    checkUserSession();
+    $(window).bind('deviceready load', function () {
+        fetchCustomGroupPost();
+    });
 }
 function customPost() {
     var post_title = $("#post_title").val();
