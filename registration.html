@@ -23,7 +23,7 @@
         <link type="text/css" rel="stylesheet" href="css/flexslider.css" />
     </head>
 
-    <body class="menubar-hoverable header-fixed" style="background-color:#f2f2f2;">
+    <body class="menubar-hoverable header-fixed" style="background-color:#f2f2f2;" onload="regFunction();">
         <section class="section-account">
 
 
@@ -33,20 +33,11 @@
                     <div class="row">
                         <div class="col-sm-6 col-sm-offset-3">
 
-                            <section class="slider">
+                            <section class="slider" style="display: none;">
                                 <div class="flexslider">
-                                    <ul class="slides">
+                                    <ul class="slides" >
                                         <li>
-                                            <img src="img/logo.png" />
-                                        </li>
-                                        <li>
-                                            <img src="img/logo.png" />
-                                        </li>
-                                        <li>
-                                            <img src="img/logo.png" />
-                                        </li>
-                                        <li>
-                                            <img src="img/logo.png" />
+                                            <img id="imageGallery" style="display: none;"/>
                                         </li>
                                     </ul>
                                 </div>
@@ -75,22 +66,29 @@
                                     <input type="password" name="cpassword" id="cpassword" class="form-control" required="required"/>
                                     <label for="username">Confirm Password</label>
                                 </div>
-                                <!--  <div class="form-group">
-                                                                      <input type="text" name="username" id="username" class="form-control">
-                                                                      <label for="username">Option 4</label>
-                                                              </div>
-                                  <div class="form-group">
-                                                                      <input type="text" name="username" id="username" class="form-control">
-                                                                      <label for="username">Option 5</label>
-                                                              </div>
-                                  <div class="form-group">
-                                                                      <div class="checkbox checkbox-inline checkbox-styled">
-                                                                                      <label>
-                                                                                              <input type="checkbox"> <span>Option 1</span>
-                                                                                      </label>
-                                                                              </div>
-                                                              </div>-->
+                                <div class="card-body no-padding">
+                                    <div class="dz-message">
+                                        <h3 class="btn  btn-raised btn-success" style="margin:0;" id="chooseGalleryForReg" onclick="chooseFromGalleryforAvatar()">Choose From Gallery</h3>
+                                        <h3 class="btn  btn-raised btn-success" style="margin:0;" id="takePicutreForReg" onclick="takePicutreforAvatar()">Take a Picture</h3>
+                                    </div>
+                                </div>
+                                <!--                                  <div class="form-group">
+                                                                                                      <input type="text" name="username" id="username" class="form-control">
+                                                                                                      <label for="username">Option 4</label>
+                                                                                              </div>
+                                                                  <div class="form-group">
+                                                                                                      <input type="text" name="username" id="username" class="form-control">
+                                                                                                      <label for="username">Option 5</label>
+                                                                                              </div>
+                                                                  <div class="form-group">
+                                                                                                      <div class="checkbox checkbox-inline checkbox-styled">
+                                                                                                                      <label>
+                                                                                                                              <input type="checkbox"> <span>Option 1</span>
+                                                                                                                      </label>
+                                                                                                              </div>
+                                                                                              </div>-->
                                 <div class="form-group">
+                                    <input type="hidden" id="imageRaw" name="imageRaw"/>
                                     <a class="btn btn-block btn-raised btn-info" href="javascript:void(0);" id="formSubmitReg1">Next</a>
                                 </div>
 
@@ -215,6 +213,7 @@
     
                 });
         </script> -->
+    <script src="phonegap.js"></script>
     <script src="js/modules/irisapp/libs/jquery/jquery-migrate-1.2.1.min.js"></script> 
     <script src="js/modules/irisapp/libs/bootstrap/bootstrap.min.js"></script> 
     <script src="js/modules/irisapp/libs/spin.js/spin.min.js"></script> 

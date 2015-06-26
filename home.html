@@ -1,0 +1,48 @@
+<section>
+    <div class="section-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card style-default-bright">
+                    <div class="card-head" style="min-height:66px;">
+                        <header style="display:block;">
+                            <div class="exploewsearch exploe2">
+                                <span id="posts" onclick="callPosts();">
+                                    <input type="text" placeholder="Enter your keyword">
+                                    <a class="search" href="#">Post</a> <a class="cls" href="#"></a> 
+                                </span>
+
+                                <div class="col-sm-12 col-md-12 col-lg-12" id="postContent" style="display: none;">
+                                    <form id="group_custom_post">
+                                        <div class=" floating-label">
+                                            <input type="text" name="post_title" id="post_title" placeholder="Subject">
+                                            <label for="Subject1"></label>
+                                        </div>
+                                        <div class="">
+                                            <textarea name="post_content" id="post_content"  rows="3" placeholder="Write Text"></textarea>
+                                            <label for="textarea2"></label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-4 text-left">
+                                            </div>
+                                            <div class="col-xs-4 text-right">
+                                                <a onclick="callCancelPop();" class="btn btn-block ink-reaction btn-flat btn-primary active"  href="#" style="margin-bottom:20px;">Cancel</a>
+                                            </div>
+                                            <div class="col-xs-4 text-right">
+                                                <a onclick="postOnDashboard();" class="btn btn-block btn-primary btn-info" href="javascript:void(0);" style="margin-bottom:20px;">Send</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </header>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row"> 
+
+            <!-- BEGIN SITE ACTIVITY -->
+            <div class="col-md-12" id="groupDetails"></div>
+        </div>
+    </div>
+</section>
