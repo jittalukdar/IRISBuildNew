@@ -32,7 +32,7 @@
     <preference name="disable-cursor" value="false"/>-->
     
     <gap:plugin name="org.apache.cordova.camera"/>
-    
+    <plugin name="Media" value="CDVSound" />
   
     <access origin="*" />
     <icon src="res/android/xhdpi.png" />
